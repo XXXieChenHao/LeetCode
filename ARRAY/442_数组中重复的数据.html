@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 给定一个整数数组 a，其中1 ≤ a[i] ≤ n （n为数组长度）, 其中有些元素出现两次而其他元素出现一次。
+    //  - 问题：找到所有出现两次的元素。
+    //  - 你可以不用到任何额外空间并在O(n)时间复杂度内解决这个问题吗？
+    var nums = [4,3,2,7,8,2,3,1];
+    var findDuplicates = function (nums) {
+      let index = 0;
+      for (let i = 0; i < nums.length; ++i) {
+        for (let j = i + 1; j < nums.length; ++j) {
+          if (nums[i] === nums[j]) {
+            nums[index] = nums[j];
+            index++;
+          }
+        }
+      }
+      nums.splice(index, nums.length - index);
+      return nums;
+    };
+    // 检测数组中重复数据，将重复数组添加到数组的最开始，设置变量记录重复数据的索引值。最后删除索引值以外的数据
+  </script>
+</body>
+
+</html>
