@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //实现函数 ToLowerCase()，该函数接收一个字符串参数 str，并将该字符串中的大写字母转换成小写字母，之后返回新的字符串。
+    var str = "Hello";
+    var toLowerCase = function (str) {
+      let arr = str.split('');
+      let AscCode;
+      let maxCode = 'Z'.charCodeAt();
+      let minCode = 'A'.charCodeAt();
+      for (let i = 0; i < arr.length; i++) {
+        // 转换为ASCII码
+        AscCode = arr[i].charCodeAt();
+        // 大写字母，转小写
+        if (maxCode >= AscCode && minCode <= AscCode) {
+          arr[i] = String.fromCharCode(AscCode + 32);
+        }
+      }
+      return arr.join('');
+    };
+    toLowerCase(str);
+  </script>
+</body>
+
+</html>
